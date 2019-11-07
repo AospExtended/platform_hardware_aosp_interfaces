@@ -18,9 +18,9 @@ cc_binary {
     init_rc: ["vendor.qti.hardware.cryptfshw@1.0-service-dlsym-qti.rc"],
     owner: "qti",
     product_variables: {
-        lineage: {
-            should_skip_waiting_for_qsee: {
-                cflags: ["-DSKIP_WAITING_FOR_QSEE"],
+        aosp: {
+            should_wait_for_qsee: {
+                cflags: ["-DWAIT_FOR_QSEE"],
             },
         },
     },

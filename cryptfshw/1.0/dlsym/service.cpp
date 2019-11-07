@@ -47,7 +47,7 @@ int main() {
 
     LOG(INFO) << "CryptfsHw HAL service is starting.";
 
-#ifndef SKIP_WAITING_FOR_QSEE
+#ifdef WAIT_FOR_QSEE
     for (int i = 0; i < CRYPTFS_HW_UP_CHECK_COUNT; i++) {
         if (GetBoolProperty("sys.keymaster.loaded", false)) goto start;
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
