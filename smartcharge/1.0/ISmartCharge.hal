@@ -17,5 +17,9 @@
 package vendor.aosp.smartcharge@1.0;
 
 interface ISmartCharge {
-    setChargingEnabled(bool enable) generates (bool rc);
+    setSmartChargeEnabled(bool enable) generates (bool rc);
+    updateCapacity(int32_t capacity) generates (bool rc);
+    getResumeLevel() generates (int32_t rc);
+    getSuspendLevel() generates (int32_t rc);
+    updateBatteryLevels(int32_t suspendLevel, int32_t resumeLevel) generates (bool rc);
 };
